@@ -116,8 +116,8 @@ static const int GRID_COLUMNS = 10;
 }
 
 
-//-(void)countNeighbors
-//{
+-(void)countNeighbors
+{
 //    // iterate through the rows
 //    // note that NSArray has a method 'count' that will return the number of elements in the array
 //    for (int i = 0; i < [_gridArray count]; i++)
@@ -156,10 +156,10 @@ static const int GRID_COLUMNS = 10;
 //            }
 //        }
 //    }
-//}
+}
 
-//-(void)updateCreatures
-//{
+-(void)updateCreatures
+{
 //    int numAlive = 0;
 //    //You will need to create a double-nested for-loop like we did in countNeighbors to access every creature in the Grid. Look over the code in countNeighbors if you need a refresher on how to do that.
 //    // iterate through the rows
@@ -188,7 +188,7 @@ static const int GRID_COLUMNS = 10;
 //        
 //    }
 //    _totalAlive = numAlive;
-//}
+}
 
 
 @end
