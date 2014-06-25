@@ -33,7 +33,7 @@
 - (Creature *)creatureForTouchPosition:(CGPoint)touchPosition
 {
     //get the row and column that was touched, return the Creature inside the corresponding cell
-    touchPosition.y
+    touchPosition.y;
 }
 
 @end
