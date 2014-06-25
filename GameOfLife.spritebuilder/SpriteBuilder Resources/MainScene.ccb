@@ -472,7 +472,7 @@
 										<key>displayName</key>
 										<string>CCLabelTTF</string>
 										<key>memberVarAssignmentName</key>
-										<string>_populationLabel</string>
+										<string></string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
@@ -913,7 +913,7 @@
 										<key>displayName</key>
 										<string>CCLabelTTF</string>
 										<key>memberVarAssignmentName</key>
-										<string>_generationLabel</string>
+										<string></string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
