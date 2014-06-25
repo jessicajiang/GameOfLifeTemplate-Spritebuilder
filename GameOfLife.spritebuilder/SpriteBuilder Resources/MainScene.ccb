@@ -680,6 +680,8 @@
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 									</dict>
 									<dict>
 										<key>UUID</key>
@@ -1120,6 +1122,8 @@
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 									</dict>
 								</array>
 								<key>customClass</key>
@@ -2038,8 +2042,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>547</real>
-							<real>154</real>
+							<real>553</real>
+							<real>159</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -2067,8 +2071,6 @@
 						<string>Grid.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
