@@ -12,12 +12,15 @@
 // these are variables that cannot be changed
 static const int GRID_ROWS = 8;
 static const int GRID_COLUMNS = 10;
+//defines the amount of rows and columns
 
 @implementation Grid {
-    NSMutableArray *_gridArray;
+    NSMutableArray *_gridArray; //2d array that stroes the creatures in the grid
     float _cellWidth;
     float _cellHeight;
+    //placing creatures on the grid correctly
 }
+//
 
 - (void)onEnter
 {
@@ -57,7 +60,7 @@ static const int GRID_COLUMNS = 10;
             _gridArray[i][j] = creature;
             
             // make creatures visible to test this method, remove this once we know we have filled the grid properly
-            creature.isAlive = YES;
+            //creature.isAlive = YES;
             
             x+=_cellWidth;
         }
@@ -77,4 +80,13 @@ static const int GRID_COLUMNS = 10;
         creature.isAlive = !creature.isAlive;
     }
 
+- (Creature *)creatureForTouchPosition:(CGPoint)touchPosition
+    {
+        //get the row and column that was touched, return the Creature inside the corresponding cell
+        //Divide the y coordinate of the touch (accessed as touchPosition.y) by the cellHeight to get the row that was touched. Store that value in an integer called row. Divide the x coordinate of the touch (accessed as touchPosition.x) by the cellWidth to get the column that was touched. Store that value in an integer called column.You can now return the creature with the statement return _gridArray[row][column].
+        int row = touchPosition.y / cellHeight;
+        int column = touchPosition.x / cellWidth;
+        return _gridArray[row][column];
+    }
+    
 @end

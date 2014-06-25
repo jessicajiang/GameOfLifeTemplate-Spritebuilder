@@ -17,6 +17,7 @@
     if (self) {
         self.isAlive = NO;
     }
+    //set the image of the creature to bubble.png and initializes creature to not be alive
     
     return self;
 }
