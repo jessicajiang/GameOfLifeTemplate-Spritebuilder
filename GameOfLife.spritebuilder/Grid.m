@@ -45,12 +45,14 @@ static const int GRID_COLUMNS = 10;
     _gridArray = [NSMutableArray array];
     
     // initialize Creatures
-    for (int i = 0; i < GRID_ROWS; i++) {
+    for (int i = 0; i < GRID_ROWS; i++)
+    {
         // this is how you create two dimensional arrays in Objective-C. You put arrays into arrays.
         _gridArray[i] = [NSMutableArray array];
         x = 0;
         
-        for (int j = 0; j < GRID_COLUMNS; j++) {
+        for (int j = 0; j < GRID_COLUMNS; j++)
+        {
             Creature *creature = [[Creature alloc] initCreature];
             creature.anchorPoint = ccp(0, 0);
             creature.position = ccp(x, y);
@@ -67,6 +69,7 @@ static const int GRID_COLUMNS = 10;
         
         y += _cellHeight;
     }
+}
     
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
     {
@@ -84,8 +87,8 @@ static const int GRID_COLUMNS = 10;
     {
         //get the row and column that was touched, return the Creature inside the corresponding cell
         //Divide the y coordinate of the touch (accessed as touchPosition.y) by the cellHeight to get the row that was touched. Store that value in an integer called row. Divide the x coordinate of the touch (accessed as touchPosition.x) by the cellWidth to get the column that was touched. Store that value in an integer called column.You can now return the creature with the statement return _gridArray[row][column].
-        int row = touchPosition.y / cellHeight;
-        int column = touchPosition.x / cellWidth;
+        int row = touchPosition.y / _cellHeight;
+        int column = touchPosition.x / _cellWidth;
         return _gridArray[row][column];
     }
     
@@ -100,6 +103,18 @@ static const int GRID_COLUMNS = 10;
       //update the generation so the label's text will display the correct generation
       _generation++;
   }
+
+    
+- (BOOL)isIndexValidForX:(int)x andY:(int)y
+    {
+        BOOL isIndexValid = YES;
+        if(x < 0 || y < 0 || x >= GRID_ROWS || y >= GRID_COLUMNS)
+        {
+            isIndexValid = NO;
+        }
+        return isIndexValid;
+    }
+    
     
 -(void)countNeighbors
     {
@@ -146,14 +161,36 @@ static const int GRID_COLUMNS = 10;
 -(void)updateCreatures
     {
         int numAlive = 0;
-        
-        
-        
-        
-        
-        
-        
+        //You will need to create a double-nested for-loop like we did in countNeighbors to access every creature in the Grid. Look over the code in countNeighbors if you need a refresher on how to do that.
+        // iterate through the rows
+        // note that NSArray has a method 'count' that will return the number of elements in the array
+        for (int i = 0; i < [_gridArray count]; i++)
+        {
+            // iterate through all the columns for a given row
+            for (int j = 0; j < [_gridArray[i] count]; j++)
+            {
+                // access the creature in the cell that corresponds to the current row/column
+                Creature *currentCreature = _gridArray[i][j];
+                
+                //In the if statement, check if the Creature's livingNeighbors property is set to 3. If it is, that means it has 3 live neighbors so you want to set its isAlive property to TRUE. In the else if you want to check if the Creature has less than or equal to 1 living neighbors or more than or equal to 4. If either are true, set the Creature's isAlive property to FALSE.
+                if (currentCreature.livingNeighbors == 3)
+                {
+                    currentCreature.isAlive = @true;
+                    numAlive++;
+                }
+                else
+                {
+                    if (currentCreature.livingNeighbors <= 1 || currentCreature.livingNeighbors >= 4)
+                    {
+                        currentCreature.isAlive = @false;
+                        numAlive++;
+                    }
+                }
+            }
+            
+        }
         _totalAlive = numAlive;
     }
-    
+
+
 @end

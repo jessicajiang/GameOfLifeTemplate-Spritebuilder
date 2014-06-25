@@ -13,6 +13,8 @@
 @property (nonatomic, assign) int totalAlive;
 @property (nonatomic, assign) int generation;
 
+-(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event;
+
 -(void)evolveStep;
 -(void)countNeighbors;
 -(void)updateCreatures;
