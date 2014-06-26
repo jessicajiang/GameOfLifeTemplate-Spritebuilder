@@ -175,13 +175,13 @@ static const int GRID_COLUMNS = 10;
             //In the if statement, check if the Creature's livingNeighbors property is set to 3. If it is, that means it has 3 live neighbors so you want to set its isAlive property to TRUE. In the else if you want to check if the Creature has less than or equal to 1 living neighbors or more than or equal to 4. If either are true, set the Creature's isAlive property to FALSE.
             if (currentCreature.livingNeighbors == 3 )
             {
-                if ( currentCreature.isAlive )
+                if ( !currentCreature.isAlive )
                     [currentCreature setIsAlive:true];
                 numAlive++;
             }
             else if (currentCreature.livingNeighbors < 2 || currentCreature.livingNeighbors > 3)
             {
-                if ( !currentCreature.isAlive)
+                if ( currentCreature.isAlive)
                     [currentCreature setIsAlive:false];
                 numAlive--;
             }
