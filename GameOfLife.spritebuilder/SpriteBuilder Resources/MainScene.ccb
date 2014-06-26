@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>22</integer>
+	<integer>23</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -472,7 +472,7 @@
 										<key>displayName</key>
 										<string>CCLabelTTF</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>_populationLabel</string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
@@ -680,8 +680,6 @@
 												</array>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 									</dict>
 									<dict>
 										<key>UUID</key>
@@ -915,7 +913,7 @@
 										<key>displayName</key>
 										<string>CCLabelTTF</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>_generationLabel</string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
@@ -2212,7 +2210,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>2.8666665554046631</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
