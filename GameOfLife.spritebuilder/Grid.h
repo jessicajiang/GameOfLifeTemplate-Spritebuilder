@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "CCSprite.h"
+#import "CCSprite.h" //properties and methods
 
 @interface Grid : CCSprite //Grid extends CCSprite, meaning it is a CCSprite with different properties
 
@@ -16,7 +16,7 @@
 
 -(void)evolveStep;
 -(void)countNeighbors;
--(void)updateCreatures;
+-(void)updateCreatures; //methods: methods are like verbs
 
 
 @end

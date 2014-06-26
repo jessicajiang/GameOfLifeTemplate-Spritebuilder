@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "Grid.h"
+#import "Grid.h" //instance variables
 #import "Creature.h"
 
 // these are variables that cannot be changed
@@ -14,8 +14,8 @@ static const int GRID_ROWS = 8;
 static const int GRID_COLUMNS = 10;
 //defines the amount of rows and columns
 
-@implementation Grid {
-    NSMutableArray *_gridArray; //2d array that stores the creatures in the grid
+@implementation Grid { //note that the static variables are before the implementation
+    NSMutableArray *_gridArray; //2d array that stores the creatures in the grid, WHEN YOU DEFINE AN OBJECT VARIABLE YOU PUT AN ASTERICK
     float _cellWidth;
     float _cellHeight;
     //placing creatures on the grid correctly
@@ -24,9 +24,9 @@ static const int GRID_COLUMNS = 10;
 
 - (void)onEnter
 {
-    [super onEnter];
+    [super onEnter]; // a function call: you're telling that object to call the function
     
-    [self setupGrid];
+    [self setupGrid];// tell self to setupGrid
     
     // accept touches on the grid
     self.userInteractionEnabled = YES;
@@ -35,7 +35,7 @@ static const int GRID_COLUMNS = 10;
 - (void)setupGrid
 {
     // divide the grid's size by the number of columns/rows to figure out the right width and height of each cell
-    _cellWidth = self.contentSize.width / GRID_COLUMNS;
+    _cellWidth = self.contentSize.width / GRID_COLUMNS; //
     _cellHeight = self.contentSize.height / GRID_ROWS;
     
     float x = 0;
@@ -51,11 +51,11 @@ static const int GRID_COLUMNS = 10;
         _gridArray[i] = [NSMutableArray array];
         x = 0;
         
-        for (int j = 0; j < GRID_COLUMNS; j++)
+        for (int j = 0; j < GRID_COLUMNS; j++) //the second for loop creates a new arrays
         {
-            Creature *creature = [[Creature alloc] initCreature];
-            creature.anchorPoint = ccp(0, 0);
-            creature.position = ccp(x, y);
+            Creature *creature = [[Creature alloc] initCreature]; //We create an object "creature" of the "Creature" class.
+            self.anchorPoint = ccp(0, 0);
+            self.position = ccp(x, y);
             [self addChild:creature];
             
             // this is shorthand to access an array inside an array
