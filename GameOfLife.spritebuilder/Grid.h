@@ -8,12 +8,11 @@
 
 #import "CCSprite.h"
 
-@interface Grid : CCSprite
+@interface Grid : CCSprite //Grid extends CCSprite, meaning it is a CCSprite with different properties
 
-@property (nonatomic, assign) int totalAlive;
-@property (nonatomic, assign) int generation;
+@property (nonatomic, assign) int totalAlive; //variables
+@property (nonatomic, assign) int generation; //properties make variables: variables are like nouns.
 
--(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event;
 
 -(void)evolveStep;
 -(void)countNeighbors;
