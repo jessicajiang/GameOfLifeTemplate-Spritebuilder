@@ -54,8 +54,8 @@ static const int GRID_COLUMNS = 10;
         for (int j = 0; j < GRID_COLUMNS; j++) //the second for loop creates a new arrays
         {
             Creature *creature = [[Creature alloc] initCreature]; //We create an object "creature" of the "Creature" class.
-            self.anchorPoint = ccp(0, 0);
-            self.position = ccp(x, y);
+            creature.anchorPoint = ccp(0, 0);
+            creature.position = ccp(x, y);
             [self addChild:creature];
             
             // this is shorthand to access an array inside an array
@@ -71,10 +71,10 @@ static const int GRID_COLUMNS = 10;
     }
 }
 
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event // touchBegan is a method that doesn't return anything that is part of Grid class that takes a UITouch object and a UIEvent object as parameters
 {
     //get the x,y coordinates of the touch
-    CGPoint touchLocation = [touch locationInNode:self];
+    CGPoint touchLocation = [touch locationInNode:self]; //(method:parameter)
     
     //get the Creature at that location
     Creature *creature = [self creatureForTouchPosition:touchLocation];
@@ -105,7 +105,7 @@ static const int GRID_COLUMNS = 10;
 }
 
 
-- (BOOL)isIndexValidForX:(int)x andY:(int)y
+- (BOOL)isIndexValidForX:(int)x andY:(int)y //x and y are the parameters
 {
     BOOL isIndexValid = YES;
     if(x < 0 || y < 0 || x >= GRID_ROWS || y >= GRID_COLUMNS)
